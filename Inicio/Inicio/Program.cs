@@ -6,13 +6,15 @@ namespace Inicio
     {
         static void Main(string[] args)
         {
+            Pessoa p = new Pessoa();
+
             string nome = string.Empty;
 
             Console.WriteLine("Digite seu nome:");
-            nome = Console.ReadLine();
+            p.Nome = Console.ReadLine();
 
-            Console.WriteLine("Hello World" + nome);
-
+            Console.WriteLine("Hello World! " + p.Nome);
+            
             Console.ReadKey();
 
 
