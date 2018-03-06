@@ -8,9 +8,6 @@ namespace Modelos
 {
     public class Fornecedor : Pessoa
     {
-        public static implicit operator Fornecedor(Fornecedor v)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

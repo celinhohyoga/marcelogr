@@ -51,6 +51,14 @@ namespace ConsoleView
             Console.WriteLine("Digite o CPF:");
             c.Cpf = Console.ReadLine();
 
+            Console.WriteLine("Digite Rua:");
+            c._Endereco.Rua = Console.ReadLine();
+
+            Console.WriteLine("Digite Complemento:");
+            c._Endereco.Complemento = Console.ReadLine();
+
+            Console.WriteLine("Digite Número:");
+            c._Endereco.Numero = int.Parse(Console.ReadLine());
 
         }
 
