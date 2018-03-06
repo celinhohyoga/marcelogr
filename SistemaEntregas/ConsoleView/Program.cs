@@ -39,28 +39,51 @@ namespace ConsoleView
             
         }
 
-        private static void CadastrarCliente()
+        private static Cliente CadastrarCliente()
         {
             Cliente c = new Cliente();
+            c._Endereco = new Endereco();
 
-            Console.WriteLine("Digite o nome:");
+            Console.WriteLine("");
+
+            Console.WriteLine("- INFORME OS DADOS DO CLIENTE -");
+
+            Console.Write("Digite o nome: ");
             c.Nome = Console.ReadLine();
 
-            Console.WriteLine();
+            Console.Write("Digite o CPF: ");
+            c.Cpf = Console.ReadLine();          
 
-            Console.WriteLine("Digite o CPF:");
-            c.Cpf = Console.ReadLine();
-
-            Console.WriteLine("Digite Rua:");
+            Console.Write("Digite Rua: ");
             c._Endereco.Rua = Console.ReadLine();
 
-            Console.WriteLine("Digite Complemento:");
+            Console.Write("Digite Complemento: ");
             c._Endereco.Complemento = Console.ReadLine();
 
-            Console.WriteLine("Digite Número:");
+            Console.Write("Digite Número: ");
             c._Endereco.Numero = int.Parse(Console.ReadLine());
 
+            return c;
+
         }
+
+
+        private static void MostrarCliente(Cliente c)
+        {
+            Console.WriteLine("");
+
+            Console.WriteLine(" - CLIENTE CADASTRADO - " );
+            Console.WriteLine("");
+            Console.WriteLine("Nome: "+c.Nome );
+            Console.WriteLine("CPF: "+ c.Cpf);
+            Console.WriteLine("Rua: "+ c._Endereco.Rua);
+            Console.WriteLine("Número: "+ c._Endereco.Numero);
+            Console.WriteLine("Complemento: "+ c._Endereco.Complemento);           
+
+            Console.WriteLine("");
+
+        }
+
 
         private static void CadastrarEntregador()
         {
@@ -92,12 +115,6 @@ namespace ConsoleView
 
         }
 
-        private static Cliente PesquisarCliente()
-        {
-
-            return new Cliente();
-        }
-
 
 
 
@@ -116,6 +133,7 @@ namespace ConsoleView
                 switch (opcaoEscolhida)
                 {
                     case OpcoesMenuPrincipal.CadastrarCliente:
+                        MostrarCliente(CadastrarCliente());
                         break;
                     case OpcoesMenuPrincipal.PesquisarCliente:
                         break;
